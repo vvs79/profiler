@@ -16,10 +16,15 @@
 @import "bootstrap";
 
 .main-page {
+
   .info,
   .action {
     text-align: center;
     padding-top: 20px;
+  }
+
+  .action {
+    margin-bottom: 30px;
   }
   button.calculate {
   	font-size: 18px;
