@@ -5,3 +5,22 @@
   .action
     button.calculate
       | Run
+
+  table.table.table-dark.table-hover
+    thead
+      tr
+        th
+          | Id
+        th
+          | Email
+        th
+          | Age
+    tbody
+      - @users.each do |user|
+        tr
+          td
+            | #{user.id}
+          td
+            | #{user.email}
+          td
+            | #{user.age}
