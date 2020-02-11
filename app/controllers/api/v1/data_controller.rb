@@ -3,7 +3,7 @@ module Api::V1
 
     def calculate
       create_users if params[:data]
-      render json: true
+      render json: User.last(10)
     end
 
     private

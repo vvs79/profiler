@@ -1,13 +1,22 @@
 version: '3'
+
 services:
   app:
     build: .
+    image: rails_app:latest
+    entrypoint: ['bin/entry.sh']
+    command: ["rails","server","-b","0.0.0.0"]
     ports:
       - 3000:3000
-      - 35729:35729 # livereload port
-    volumes:
-      - './:/app'
+      # - 35729:35729 # livereload port
+    # volumes:
+    #   - './:/app'
       # - app-sync:/app:nocopy
+    deploy:
+      replicas: 2
+      resources:
+        limits:
+          memory: 500M
 
   postgres:
     image: postgres:9.5
@@ -15,3 +24,21 @@ services:
       - 15432:5432
     environment:
       POSTGRES_PASSWORD: 12345678
+    # volumes:      
+    #   - '/Users/vskrypnyk/postgresql/data'
+
+  nginx:
+    # build: ./nginx
+      # context: .
+      # dockerfile: ./nginx/Dockerfile
+      # args:
+      #   RAILS_ENV: $RAILS_ENV
+    image: nginx:stable-alpine
+    ports:
+      - 8080:80
+    # links:
+    #   - app
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+    deploy:
+      replicas: 1
