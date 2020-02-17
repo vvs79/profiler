@@ -74,3 +74,7 @@ gem 'memory_profiler'
 # For call-stack profiling flamegraphs
 gem 'flamegraph'
 gem 'stackprof'
+
+gem 'execjs'
+# gem 'therubyracer', platforms: :ruby
+# gem 'mini_racer', '~> 0.1.14'
