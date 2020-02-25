@@ -5,7 +5,7 @@ services:
     build: .
     image: rails_app:latest
     entrypoint: ['bin/entry.sh']
-    command: ["RAILS_ENV=production",rails","server","-b","0.0.0.0"]
+    command: rails server -b 0.0.0.0
     ports:
       - 3000:3000
     environment:
