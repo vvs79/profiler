@@ -1,7 +1,7 @@
 class MainController < ApplicationController
 
   def index
-    @hello = 'Hello my friend'
+    @hello = 'Please click button \'Run\''
     @users = User.first(10)
   end
 end
