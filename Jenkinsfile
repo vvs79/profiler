@@ -50,6 +50,7 @@ pipeline {
         branch 'master'
       }
       steps {
+        sh "docker swarm leave -f"
         sh "docker swarm init"
         sh "docker stack deploy rails_app -c docker-compose-prod.yml --with-registry-auth"
       }
@@ -63,9 +64,4 @@ pipeline {
       }
     }
   }
-  // environment {
-  //   RAILS_ENV = 'test'
-  //   DISABLE_DATABASE_ENVIRONMENT_CHECK = '1'
-  //   DATABASE_URL = 'postgresql://jenkins:jenkins@localhost:5432/pod_test'
-  // }
 }
