@@ -51,6 +51,7 @@ pipeline {
       }
       steps {
         sh "docker swarm leave -f"
+        sh "docker build -t rails_app ."
         sh "docker swarm init"
         sh "docker stack deploy rails_app -c docker-compose-prod.yml --with-registry-auth"
       }
