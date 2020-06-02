@@ -9,11 +9,11 @@ def deployEnv(branch){
 pipeline {
   agent any
   stages {
-    stage('Build') {
-      steps {
-        baSh "bundle install"
-      }
-    }
+    // stage('Build') {
+    //   steps {
+    //     baSh "bundle install"
+    //   }
+    // }
     // stage('Test') {
     //   when {
     //     not {
@@ -40,11 +40,11 @@ pipeline {
     //     }
     //   }
     // }
-    stage('Run linters') {
-      steps {
-        baSh 'rubocop --format=json --out=rubocop-result.json'
-      }
-    }
+    // stage('Run linters') {
+    //   steps {
+    //     baSh 'rubocop --format=json --out=rubocop-result.json'
+    //   }
+    // }
     stage('Build docker'){
       when {
         branch 'master'
