@@ -61,7 +61,7 @@ pipeline {
         branch 'master'
       }
       steps {
-        baSh "cap ${deployEnv(env.BRANCH_NAME)} deploy"
+        sh "cap ${deployEnv(env.BRANCH_NAME)} deploy"
       }
     }
   }
