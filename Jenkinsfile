@@ -11,7 +11,7 @@ pipeline {
   stages {
     // stage('Build') {
     //   steps {
-    //     baSh "bundle install"
+    //     sh "bundle install"
     //   }
     // }
     // stage('Test') {
@@ -21,10 +21,10 @@ pipeline {
     //     }
     //   }
     //   steps {
-    //     baSh 'bundle exec rake db:test:prepare'
-    //     baSh 'bundle exec rake db:test:load'
-    //     baSh 'bundle exec rake db:migrate'
-    //     baSh 'bundle exec rspec'
+    //     sh 'bundle exec rake db:test:prepare'
+    //     sh 'bundle exec rake db:test:load'
+    //     sh 'bundle exec rake db:migrate'
+    //     sh 'bundle exec rspec'
     //   }
     // }
     // stage('Test Surveyor') {
@@ -35,8 +35,8 @@ pipeline {
     //   }
     //   steps {
     //     dir(path: 'vendor/plugins/surveyor/') {
-    //       baSh 'bundle install'
-    //       baSh 'rspec'
+    //       sh 'bundle install'
+    //       sh 'rspec'
     //     }
     //   }
     // }
