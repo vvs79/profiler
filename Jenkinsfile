@@ -61,7 +61,8 @@ pipeline {
         branch 'master'
       }
       steps {
-        sh "cap ${deployEnv(env.BRANCH_NAME)} deploy"
+        // sh "cap ${deployEnv(env.BRANCH_NAME)} deploy"
+        sh "cap production deploy"
       }
     }
   }
