@@ -70,7 +70,7 @@ set :branch, ENV['DEPLOYMENT_BRANCH'] || 'master'
 
 # set :rvm_roles, :web
 # set :rvm_ruby_version, "2.5.1@#{File.read('.ruby-gemset').strip}"
-server '54.203.104.196', user: 'ubuntu', roles: %w[web app db], primary: true, ssh_options: {
+server '54.187.232.124', user: 'ubuntu', roles: %w[web app db], primary: true, ssh_options: {
   keys: ['./aws_key.pem']
 }
 
