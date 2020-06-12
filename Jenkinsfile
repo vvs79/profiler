@@ -62,7 +62,7 @@ pipeline {
       }
       steps {
         // sh "cap ${deployEnv(env.BRANCH_NAME)} deploy"
-        sh "cap production deploy"
+        sh "bundle exec cap production deploy"
       }
     }
   }
