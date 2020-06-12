@@ -50,7 +50,7 @@ pipeline {
         branch 'master'
       }
       steps {
-        // sh "docker swarm leave -f"
+        sh "docker swarm leave -f"
         sh "docker build -t rails_app ."
         sh "docker swarm init"
         sh "docker stack deploy rails_app -c docker-compose-prod.yml --with-registry-auth"
@@ -62,7 +62,7 @@ pipeline {
       }
       steps {
         // sh "cap ${deployEnv(env.BRANCH_NAME)} deploy"
-        sh "bundle exec cap production deploy"
+        sh "cap production deploy"
       }
     }
   }
