@@ -60,29 +60,37 @@
 #     # password: "please use keys"
 #   }
 
-set :stage, :production
-set :branch, ENV['DEPLOYMENT_BRANCH'] || 'master'
 
-# This is used in the Nginx VirtualHost to specify which domains
-# the app should appear on. If you don't yet have DNS setup, you'll
-# need to create entries in your local Hosts file for testing.
-# set :server_name, '~^(www\\.)?(\\d+|admin|uploads)\\.tripoded\\.com$'
 
-# set :rvm_roles, :web
-# set :rvm_ruby_version, "2.5.1@#{File.read('.ruby-gemset').strip}"
-server '35.167.221.85', user: 'ubuntu', roles: %w[web app db], primary: true, ssh_options: {
-  keys: ['./aws_key.pem']
-}
 
-set :deploy_to, "/home/ubuntu/apps/profiler"
 
-# dont try and infer something as important as environment from
-# stage name.
-set :rails_env, :production
 
-set :pem_key, './aws_key.pem'
 
-# Server pem-key authentication
-set :ssh_options, forward_agent: true, auth_methods: ['publickey'], keys: [fetch(:pem_key)]
+# new functions
 
-# before 'deploy:check:linked_files', 'deploy:copy_config'
+# set :stage, :production
+# set :branch, ENV['DEPLOYMENT_BRANCH'] || 'master'
+
+# # This is used in the Nginx VirtualHost to specify which domains
+# # the app should appear on. If you don't yet have DNS setup, you'll
+# # need to create entries in your local Hosts file for testing.
+# # set :server_name, '~^(www\\.)?(\\d+|admin|uploads)\\.tripoded\\.com$'
+
+# # set :rvm_roles, :web
+# # set :rvm_ruby_version, "2.5.1@#{File.read('.ruby-gemset').strip}"
+# server '35.167.221.85', user: 'ubuntu', roles: %w[web app db], primary: true, ssh_options: {
+#   keys: ['./aws_key.pem']
+# }
+
+# set :deploy_to, "/home/ubuntu/apps/profiler"
+
+# # dont try and infer something as important as environment from
+# # stage name.
+# set :rails_env, :production
+
+# set :pem_key, './aws_key.pem'
+
+# # Server pem-key authentication
+# set :ssh_options, forward_agent: true, auth_methods: ['publickey'], keys: [fetch(:pem_key)]
+
+# # before 'deploy:check:linked_files', 'deploy:copy_config'
