@@ -93,4 +93,4 @@
 # # Server pem-key authentication
 # set :ssh_options, forward_agent: true, auth_methods: ['publickey'], keys: [fetch(:pem_key)]
 
-# # before 'deploy:check:linked_files', 'deploy:copy_config'
+# # # before 'deploy:check:linked_files', 'deploy:copy_config'
