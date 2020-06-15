@@ -66,7 +66,7 @@
 
 
 
-# new functions
+# New functions
 
 # set :stage, :production
 # set :branch, ENV['DEPLOYMENT_BRANCH'] || 'master'
