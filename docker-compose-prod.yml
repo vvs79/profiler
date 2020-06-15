@@ -3,7 +3,7 @@ version: '3'
 services:
   app:
     build: .
-    image: rails_app:latest
+    image: ${DOCKER_REGISTRY:-}rails_app:latest
     entrypoint: ['bin/entry.sh']
     command: rails server -b 0.0.0.0
     ports:
