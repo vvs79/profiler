@@ -1,7 +1,7 @@
 class MainController < ApplicationController
 
   def index
-    @hello = 'PPPlease click button \'Run\''
+    @hello = 'Qlease click button \'Run\''
     @users = User.first(10)
   end
 end
