@@ -64,19 +64,18 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'ruby-prof'
 
 gem 'derailed_benchmarks', group: :development
-gem 'stackprof', group: :development
-gem 'meta_request', group: :development
-gem 'bullet', group: :development
-gem 'active_record_query_trace', group: :development
+gem 'stackprof'
+# bundle exec derailed bundle:objects development
+# bundle exec derailed bundle:mem
+gem 'meta_request', group: :development# cosole rails
+gem 'bullet', group: :development# +-eager loading
+gem 'active_record_query_trace', group: :development# optimizations
 
-gem 'rack-mini-profiler'
+gem 'rack-mini-profiler'# speed badge
 # For memory profiling
 gem 'memory_profiler'
 
 # For call-stack profiling flamegraphs
-gem 'flamegraph'
-gem 'stackprof'
+gem 'flamegraph'# to rack-mini-profiler
 
 gem 'execjs'
-# gem 'therubyracer', platforms: :ruby
-# gem 'mini_racer', '~> 0.1.14'
