@@ -6,7 +6,7 @@ services:
     # image: ${DOCKER_REGISTRY:-}rails_app:latest
     image: rails_app:latest
     entrypoint: ['bin/entry.sh']
-    command: rails server -b 0.0.0.0
+    command: rails server
     ports:
       - 3000:3000
     environment:
