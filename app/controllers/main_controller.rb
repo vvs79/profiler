@@ -2,7 +2,7 @@ class MainController < ApplicationController
 
   def index
     RubyProf.start if Rails.env.development?
-    @hello = 'QQQPlease click button \'Run\''
+    @hello = 'Please click button \'Run\''
     @users = User.last(10)
     if Rails.env.development?
       result = RubyProf.stop
